@@ -11,6 +11,9 @@ const SB_SI_URL = "https://yisignzphxpjugshmhhp.supabase.co/auth/v1/token?grant_
 const SB_SI_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlpc2lnbnpwaHhwanVnc2htaGhwIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY0NTc0MTM3OCwiZXhwIjoxOTYxMzE3Mzc4fQ.QTzLb6v9bcJjJHgidwExKh0jZHJrfAeOh8rolBB2xEM";
 
 
+const SUPABASE_URL = "https://yisignzphxpjugshmhhp.supabase.co"
+const SUPABASE_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlpc2lnbnpwaHhwanVnc2htaGhwIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY0NTc0MTM3OCwiZXhwIjoxOTYxMzE3Mzc4fQ.QTzLb6v9bcJjJHgidwExKh0jZHJrfAeOh8rolBB2xEM"
+
 
 //set and get error message for page (name)
 
@@ -20,50 +23,89 @@ const SB_SI_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIs
 //set up event listener for sign-in page
 
 
-getForm.addEventListener('submit',(devt)=>{
+getForm.addEventListener('submit',(evt)=> {
     signInError.innerHTML = "";
-    devt.preventDefault();
-    const emailInputValue = document.querySelector('#email');
-    const passwordInputValue = document.querySelector('#password');
+    evt.preventDefault();
+    const sbkey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlpc2lnbnpwaHhwanVnc2htaGhwIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY0NTc0MTM3OCwiZXhwIjoxOTYxMzE3Mzc4fQ.QTzLb6v9bcJjJHgidwExKh0jZHJrfAeOh8rolBB2xEM";
+    const sburl = "https://yisignzphxpjugshmhhp.supabase.co/auth/v1/signup"
+    const emailValue = evt.target[0];
+    const pwValue = evt.target[1];
+    console.log(emailValue.value);
+    console.log(pwValue.value)
 
-
-    if(
-        checkNotEmpty(emailInputValue,"you must enter a email")&&
-        checkNotEmpty(passwordInputValue,"you must enter a password")
+    if (
+        checkNotEmpty(emailValue, "you must enter a email") &&
+        checkNotEmpty(pwValue, "you must enter a password")
 
     ){
+        fetch(sburl,{
+            method: "POST",
+            headers: {
+                "apikey": `${sbkey}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "email": emailValue.value,
+                "password": pwValue.value
+            })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
 
-      login(emailInputValue,passwordInputValue)
-          .then (data => {
-              if (data.user.email !== undefined){
-                  window.location.replace('/dashboard.html')
-              }
-          })
     }
-
-
-});
+        });
 
 //created function to validate inputs, create div,set inner html to create div, and append to element on index page.
-async function login (email,password){
+// const login = async (email,password) => {
+//     const existingUser = {
+//         email: email,
+//         password: password
+//     }
+//
+// }
 
-    const existingUser = {
-        email: email,
-        password: password
-    }
 
-    const signedInUser = await fetch(`${SB_SI_URL}`, {
+
+
+function signIn(email,password){
+    fetch(`${sburl}/auth/v1/signup`,{
         method: "POST",
         headers: {
-            "apikey": `${SB_SI_KEY}`,
+            "apikey": `${sbkey}`,
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(existingUser)
-
+        body: JSON.stringify({
+            "email": email.value,
+            "password": password.value
+        })
     })
-    const signedUser = await signedInUser.json()
-    return signedUser
+        .then(res => res.json())
+        .then(data => console.log(data))
 }
+
+
+
+
+
+
+//
+// async function login (email,password){
+//    await fetch(`${SUPABASE_URL}/auth/v1/signup`,{
+//         method: "POST",
+//         headers: {
+//             "apikey": `${SUPABASE_API_KEY}`,
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             "email": emailInputValue.value,
+//             "password": passwordInputValue.value
+//         })
+//     }).then(res => res.json())
+//        .then(data => console.log(data))
+// return true
+// }
 
 
 function checkNotEmpty(domInput,errorMessage){
