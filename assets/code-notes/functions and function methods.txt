@@ -1,0 +1,99 @@
+functions
+
+filter()
+
+const filteredItems = items.filter((item)=>{
+return item.price < 100;
+})
+returns true or false on items in the array
+return item.price < 100;
+================================================================
+map()
+take one array and create new array (does something to each item in the array and returns new array.
+items.map(newNumb);
+
+const newNumb = items.map((item)=>{
+return item * 2;
+});
+=================================================================
+find()
+
+lets you find a single item in an array
+true or false
+
+
+
+const findFood = items.find((item)=>{
+item.price === 25;
+});
+
+==================================================================
+
+forEach();
+does not return anything;
+does something for each item in the array.
+
+items.forEach();
+
+
+const firstNameMess = items.forEach((item)=>{
+
+console.log(items.name + " you are on the list");
+});
+
+================================================================
+
+some();
+checks for one item
+
+does not return a new array it returns true or false
+
+const inexpensiveItem = items.some((item)=>{
+return items.price  <= 100;
+})
+
+console.log(inexspensiveItems); returns true in the console
+
+================================================================every();
+checks for all items
+does not return a new array it returns true or false
+are all items in the array are less than 100
+
+const inexpensiveItem = items.every((item)=>{
+return items.price  <= 100;
+})
+
+console.log(inexspensiveItems); returns true in the console
+
+================================================================reduce();
+does operation on the items
+
+if you want to get the total price of all the items
+
+const itemsTotal = items.reduce((currentTotal,item)=>{
+
+return item.price + currntTotal;
+
+}, 0)
+
+console.log(itemsTotal);
+
+================================================================
+
+include();
+
+true or false
+takes a single argument checks if in array.
+
+const items = [1,2,5,7,9];
+
+const includesTwo = items.include(5);
+
+console.log(includesTwo);
+true in the console
+
+  
+
+
+
+

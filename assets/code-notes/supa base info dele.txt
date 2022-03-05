@@ -1,0 +1,35 @@
+mosimba tutorial supabase
+
+
+anon
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFlYmhteWFraXl5dHhjaXllZXB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDU0NzUxMjgsImV4cCI6MTk2MTA1MTEyOH0.W4t1DeoAT1ZfhWjSDi4S8jcYbk8JHYOJ_LxlOuZ1uvo
+
+service
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFlYmhteWFraXl5dHhjaXllZXB0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY0NTQ3NTEyOCwiZXhwIjoxOTYxMDUxMTI4fQ.zzCrvtOgJDTBUsPasAqfRigAJFk2Ts6ScN-afw1YxAc
+
+url
+https://aebhmyakiyytxciyeept.supabase.co
+
+
+jwt 
+1b9a32b0-d3a4-44c7-bb20-6f23755d3cd1
+
+
+=================================================
+
+1. Set up database and tables
+
+2. Add data
+
+3. Test
+
+4. Copy the url: into the address bar (/rest/v1)
+
+5. Copy Name of table/?apikey=anon key into address bar
+
+6. Create another table
+
+7. Create foreign key
+
+8. Test again
+https://aebhmyakiyytxciyeept.supabase.co/rest/v1/students?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFlYmhteWFraXl5dHhjaXllZXB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDU0NzUxMjgsImV4cCI6MTk2MTA1MTEyOH0.W4t1DeoAT1ZfhWjSDi4S8jcYbk8JHYOJ_LxlOuZ1uvo

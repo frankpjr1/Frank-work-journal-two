@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lunch Box Kitchen Journal</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+
+</head>
+<body class="bg-f_beige-medium">
+    <div id="container" class=" flex flex-col justify-between mx-auto p-20 bg-purple-300">
+
+<!--header-->
+        <div id="header" class="flex flex-col items-center">
+            <h1 class="text-3xl font-bold text-f_maroon-light">Lunch Box Kitchen Journal</h1>
+            <img src="assets/images/lunch_box_kitchen-logo.png" alt="lunch box kitchen logo">
+        </div>
+
+    <div id="main" class="my-12">
+
+        <form action="" id="sign-in-form" class="flex flex-col items-center space-y-4 mx-auto md:w-1/3">
+
+<!--email-->
+            <div  class="w-full flex flex-col space-y-2">
+                <label for="email" class="w-full font-medium">email:</label>
+                <input type="email" name="email" id="email" class="w-full p-2 rounded-md outline-none bg-f_blue-peach">
+            </div>
+
+<!--password-->
+            <div  class="w-full font-medium flex flex-col space-y-2">
+                <label for="password">password:</label>
+                <input type="password" autocomplete="off" name="password" id="password" class="w-full bg-f_blue-peach p-2 rounded-md outline-none">
+            </div>
+
+<!--submit   -->
+            <div class="w-full text-f_beige-medium">
+                <input type="submit" id="submit" placeholder="submit" class="w-full p-2 rounded-md mt-4 bg-f_blue-grey">
+            </div>
+
+<!--error message-->
+
+            <div id="error"></div>
+
+<!--forgot password and signup-->
+            <div class="flex justify-between w-full">
+                <p><a href="#">sign up</a></p>
+                <p><a href="#">forgot  your password</a></p>
+            </div>
+
+<!--view public posts-->
+            <div class="w-full text-f_beige-medium">
+                <input type="button" value="view public posts" id="public-posts" placeholder="submit" class="w-full p-2 rounded-md mt-4 bg-f_blue-grey">
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+<!--footer -->
+    <div id="footer">
+
+        <div class="w-full flex flex-col items-center w-full text-f_blue-grey">
+            <p>lunch Box Kitchen</p>
+            <p>739 Wilshire Blvd Los Angeles, Ca 5643656</p>
+            <p>phone: 754-564-4575</p>
+            <p>Email: info@lbk.com</p>
+        </div>
+
+    </div>
+</div>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+React
+===========================================================
+
+React is declarative, efficient, flexible JavaScript library for building user intefaces
+
+# Components
+
+# React.Component
+
+subclasses
+
+we use components to tell React what we want to see on the screen
+
+=============================================================
+Class
+Render
+Return
+
+=============================================================
+Passing props is how information flows in React apps, from parents to children.
+
+===============================================================
+
+To “remember” things, components use state.
+
+===============================================================
+
+When you call setState in a component, React automatically updates the child components inside of it too.
+
+===============================================================
+
+
+To collect data from multiple children, or to have two child components communicate with each other, you need to declare the shared state in their parent component instead. The parent component can pass the state back down to the children by using props; this keeps the child components in sync with each other and with the parent component.
+
+===============================================================
+
+There are generally two approaches to changing data. The first approach is to mutate the data by directly changing the data’s values. The second approach is to replace the data with a new copy which has the desired changes.
+
+
+================================================================
+
+in React, function components are a simpler way to write components that only contain a render method and don’t have their own state.
