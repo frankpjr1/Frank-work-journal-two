@@ -8,5 +8,8 @@
   "scripts": {
     "server": "live-server",
     "build:tailwind": "npx tailwindcss -i css/style.css -o css/tailwind.css --watch"
+  },
+  "dependencies": {
+    "glob-parent": "5.1.2"
   }
 }
