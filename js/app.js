@@ -39,10 +39,8 @@ getForm.addEventListener('submit',(evt)=> {
         login(emailValue,pwValue)
     }
 
-    let returnValue;
-    if(emailValue.returnValue === false){
-           console.log("please sign up for new password")
-       } window.location.replace('dashboard.html')
+
+
 
         });
 
@@ -65,8 +63,15 @@ async function login (email,password){
     }).then(response => {
         document.getElementById('email').value=""
         document.getElementById('password').value=""
-   }).then(items =>{
-        console.log(items);
+   }).then(data =>{
+       if (data.error !== undefined){
+           console.log(data.error_description)
+           return false
+       }
+       if(data.access_token !== undefined){
+           window.location.replace(`/dashboard.html?access_token=${data.access_token}`);
+           return true
+       }
 
    })
 return user

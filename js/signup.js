@@ -28,6 +28,11 @@ signupForm.addEventListener('submit', (evt) => {
         signUpLk(emailValue,pwValue)
 
     }
+    {
+        window.location.replace(`/index.html`)
+    }{
+        window.location.replace(`/signup.html`)
+    }
 
 
 })
